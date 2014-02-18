@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}用户注册{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="../static/css/reg.css" / type="text/css">
+<script src="../static/js/jquery.js"></script>
+<script src="../static/js/check.js"></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="span2"></div>
+		<div class="span10">
+				<form class="form-horizontal" id="reg" action="/register/" method="post">
+					<div class="page-header"><h3>用户注册</h3></div>
+				    <div class="control-group" id="un">
+					    <label class="control-label" for="inputUser">Username</label>
+					    <div class="controls">
+					      <input type="text" id="inputUser" name="inputUser" placeholder="用户名" value="{{username}}" required="required"><span class="help-inline"></span>
+					    </div>
+				    </div>
+				    {% if reg_fail %}
+							<script>$('input[name="inputUser"]').next().text('用户名已存在');</script>
+					{% endif %}
+				  <div class="control-group" id="pw1">
+				    <label class="control-label" for="inputPassword">Password</label>
+				    <div class="controls">
+				      <input type="password" name="pw" placeholder="密码" required="required"><span class="help-inline"></span>
+				    </div>
+				  </div>
+				  <div class="control-group" id="pw2">
+				    <label class="control-label" for="inputPassword">Confirm Password</label>
+				    <div class="controls">
+				      <input type="password" name="pw2" placeholder="确认密码" required="required"><span class="help-inline"></span>
+				    </div>
+				  </div>
+				  <div class="form-actions">
+					  <button class="btn btn-primary" id="regsummit">Summit</button>
+				 </div>
+				</form>
+		</div>
+		<div class="span2"></div>
+	</div>
+</div>
+{% endblock %}

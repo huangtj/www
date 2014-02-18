@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="../static/css/bootstrap/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" href="../static/css/style.css" type="text/css"/>
+	<script type="text/javascript" src="../static/js/jquery.js"></script>
+	<script type="text/javascript" src="../static/css/bootstrap/js/bootstrap.min.js"></script>
+	{% block link %}{% endblock %}
+</head>
+<body>
+    
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
+				 <span class="icon-bar"></span><span class="icon-bar"></span>
+				 <span class="icon-bar"></span>
+				 </a> 
+				 <a class="brand" href={{homepage}}>&nbsp&nbsp我的主页</a>
+				<div class="nav-collapse collapse navbar-responsive-collapse">
+					<ul class="nav">
+						<li class="active">
+							<a href={{homepage}}><i class="icon-home icon-white"></i>&nbsp首页</a>
+						</li>
+						<li>
+							<a href=""><i class="icon-book icon-white"></i>课件资料</a>
+						</li>
+						<li>
+							<a href=""><i class="icon-download icon-white"></i>软件下载</a>
+						</li>
+						<li>
+							<a href=""><i class="icon-white icon-th-large"></i>其他</a>
+						</li>
+						<li class="dropdown">
+							 <a data-toggle="dropdown" class="dropdown-toggle" href=""><i class="icon-upload icon-white"></i>上传<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href={{upclassinfo}}>课件</a>
+								</li>
+								<li>
+									<a href="">软件</a>
+								</li>
+								<li>
+									<a href="">其他</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li class="nav-header">
+									标签
+								</li>
+								<li>
+									<a href="">链接1</a>
+								</li>
+								<li>
+									<a href="">链接2</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav pull-right">
+						<li>
+							<a href=""><i class="icon-envelope icon-white"></i>消息</a>
+						</li>
+						<li class="divider-vertical">
+						</li>
+						<li class="dropdown">
+							 <a data-toggle="dropdown" class="dropdown-toggle" href=""><i class="icon-user icon-white"></i>{{ username }}<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="">个人设置</a>
+								</li>
+								
+								<li class="divider">
+								</li>
+								<li>
+									<a href="/logout/">退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% block content %}{% endblock %}
+	
+	{% block js %}{% endblock %}
+</body>
+</html>
