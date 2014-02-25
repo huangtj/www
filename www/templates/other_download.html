@@ -1,0 +1,40 @@
+{% extends "webbase.html" %} 
+{% block title %}下载课件资料{% endblock %}
+{% block link %}
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="span2"></div>
+		<div class="span8">
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							文件
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for file in file_list %}
+					<tr>
+						<td>
+							{{file.num}}
+						</td>
+						<td>
+							<a href="/other_download_op/filename={{file.title}}">{{file.title}}</a>
+						</td>
+						
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="span2">
+		</div>
+	</div>
+</div>
+{% endblock %}

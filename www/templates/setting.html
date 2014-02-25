@@ -1,0 +1,47 @@
+{% extends "webbase.html" %} 
+{% block title %}修改个人资料{% endblock %}
+{% block link %}
+<script src="../static/js/setting.js" ></script>
+{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="span2"></div>
+		<div class="span8">
+			 <form class="form-horizontal" action="/setting_op/" method="post" id="settingbox">
+			 	<div class="page-header"><h3>修改密码</h3></div>
+			 	<div class="control-group" id="newpw">
+					<label class="control-label" for="inputPassword">用户</label>
+					<div class="controls">
+					    <input type="text" value="{{username}}"  readonly="readonly" name="username">
+					</div>
+				</div>
+				<div class="control-group" id="newpw">
+					<label class="control-label" for="inputPassword">新密码</label>
+					<div class="controls">
+					    <input type="password" name="newpw" required="required"><span class="help-inline"></span>
+					</div>
+				</div>
+					<div class="control-group" id="newpw2">
+				    <label class="control-label" for="inputPassword">确认密码</label>
+				    <div class="controls">
+				      <input type="password" name="newpw2" required="required"><span class="help-inline"></span>
+				    </div>
+				 	</div>
+					<div class="form-actions">
+					<button class="btn btn-primary" id="setsummit">提交</button>
+				</div>
+				{%if error%}
+		        <div class="alert alert-error">{{message}}</div>
+		        {%endif%}
+
+		        {%if success%}
+		        <div class="alert alert-success">{{message}}</div>
+		        {%endif%}
+	    	</form>
+		</div>
+		<div class="span2">
+		</div>
+	</div>
+</div>
+{% endblock %}
